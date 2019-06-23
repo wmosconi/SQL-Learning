@@ -1,0 +1,10 @@
+SELECT
+	trip_id,
+	duration
+FROM
+	trips
+GROUP BY
+	trip_id,
+	duration
+ORDER BY
+	duration ASC;
