@@ -1,0 +1,7 @@
+SELECT
+	zip,
+	max(maxtemperaturef) as max_temp
+FROM
+	weather
+GROUP BY 
+	zip
