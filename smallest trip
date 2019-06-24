@@ -8,3 +8,14 @@ GROUP BY
 	duration
 ORDER BY
 	duration ASC;
+
+### Correct solution
+SELECT
+	*
+FROM
+	trips
+WHERE
+	duration = 
+	(SELECT min(duration)
+	FROM
+		trips)
