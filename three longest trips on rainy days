@@ -1,10 +1,13 @@
 SELECT
-	weather.precipitationin,
-	weather.date,
-	trips.start_date
+	t.trip_id
 FROM
-	weather
+	trips t
 JOIN
-	trips
+	weather w 
 ON
-	weather.date = trips.start_date
+	TO_DATE(t.start_date, 'YYYY-MM-DD') = TO_DATE(w.date, 'YYYY-MM-DD') and t.zip_code = w.zip
+WHERE
+	w.events = 'Rain'
+ORDER BY
+	t.duration DESC
+LIMIT 3
