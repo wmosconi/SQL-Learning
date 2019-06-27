@@ -1,0 +1,10 @@
+SELECT
+	weather.precipitationin,
+	weather.date,
+	trips.start_date
+FROM
+	weather
+JOIN
+	trips
+ON
+	weather.date = trips.start_date
