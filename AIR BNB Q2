@@ -1,0 +1,17 @@
+SELECT
+	neighbourhood,
+	COUNT(*)
+FROM
+	sfo_listings
+GROUP BY
+	neighbourhood
+HAVING
+	COUNT(*) = (SELECT
+			   		MAX(cnt)
+			   FROM(
+			   		SELECT
+					COUNT(*) as cnt
+				FROM
+					sfo_listings
+				GROUP BY
+					neighbourhood) as n) 
