@@ -21,3 +21,13 @@ WHERE
 		FROM
 			sfo_listings
 		)
+
+#####review for context on house
+SELECT
+	*
+FROM
+	sfo_reviews
+WHERE
+	listing_id = 24650875
+	
+Good reviews
