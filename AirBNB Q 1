@@ -4,3 +4,20 @@ FROM
 	sfo_listings
 ORDER BY
 	price DESC
+LIMIT
+	1
+
+
+
+######## Best Practice
+
+SELECT
+	*
+FROM
+	sfo_listings
+WHERE
+	price = (SELECT
+			MAX(price)
+		FROM
+			sfo_listings
+		)
