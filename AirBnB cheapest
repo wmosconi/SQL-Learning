@@ -1,0 +1,9 @@
+SELECT
+	AVG(CAST(REPLACE(REPLACE(price, '$', ''), ',', '') AS FLOAT)),
+	EXTRACT(Month FROM calender_date)
+FROM
+	sfo_calendar
+GROUP BY
+	EXTRACT(Month FROM calender_date)
+ORDER BY
+	AVG(CAST(REPLACE(REPLACE(price, '$', ''), ',', '') AS FLOAT)) ASC
